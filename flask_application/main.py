@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory, redirect, url_for
 from application_forms import UploadFileForm, ChooseOperationForm, DownloadProcessedImageForm
 from werkzeug.utils import secure_filename
 import os
+from remote_procedure_calls import process_image
 
 # Create flask application
 app = Flask(__name__)
