@@ -9,6 +9,9 @@ class UploadFileForm(FlaskForm):
 
 class ChooseOperationForm(FlaskForm):
     # Declare our form variables
-    #file = FileField("File", validators= [InputRequired()]) # The file field, required to not be blank
     operation = SelectField("Operation", choices=[('edge_detection', 'Detect Edges'), ('color_inversion', 'Invert Colors')])
     submit = SubmitField("Upload File")                     # The submit field
+
+class DownloadProcessedImageForm(FlaskForm):
+    # Declare our form variables
+    submit = SubmitField("Download File")                     # The submit field

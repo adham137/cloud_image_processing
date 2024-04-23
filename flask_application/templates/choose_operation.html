@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Operations</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
-    <h1> Choose Operation Page</h1>
-
-    <form method='POST' enctype='multipart/form-data'>
-        {{form.hidden_tag()}}
-        {{form.operation()}}
-        {{form.submit()}}
-    </form>
+    <div class="container">
+        <h1>Choose Operation Page</h1>
+        <form method='POST' enctype='multipart/form-data'>
+            {{ form.hidden_tag() }}
+            {{ form.operation() }}
+            {{ form.submit() }}
+        </form>
+    </div>
 </body>
 </html>
