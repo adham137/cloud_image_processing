@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo</title>
+</head>
+<body>
+  <h1>Subform demo</h1>
+  <p>Edit names / mark for deletion / add new</p>
+  
+  <form method="post">
+    {{ form.hidden_tag() }}
+
+    {% for entry in form.operations %}
+      <div>
+        {{ entry.imageName.label }} {{ entry.imageName() }}
+        {{ entry.operation() }} {{ entry.operation.label }}
+      </div>
+    {% endfor %}
+
+    {{ form.submit() }}
+
+  </form>
+
+</body>

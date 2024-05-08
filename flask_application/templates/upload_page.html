@@ -12,8 +12,17 @@
         <form method='POST' enctype='multipart/form-data'>
             {{ form.hidden_tag() }}
             {{ form.file() }}
-            {{ form.submit() }}
+            {{ form.upload() }}
+            {{ form.next() }}
         </form>
+        {% if filenames %}
+        <p>Uploaded files:</p>
+        <ul>
+            {% for filename in filenames %}
+                <li>{{ filename }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 </body>
 </html>

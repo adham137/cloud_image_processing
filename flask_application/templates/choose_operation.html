@@ -9,11 +9,19 @@
 <body>
     <div class="container">
         <h1>Choose Operation Page</h1>
-        <form method='POST' enctype='multipart/form-data'>
+        <form method="POST">
             {{ form.hidden_tag() }}
-            {{ form.operation() }}
+        
+            {% for entry in form.operations %}
+              <div>
+                {{ entry.imageName.label }} {{ entry.imageName() }}
+                {{ entry.operation() }} {{ entry.operation.label }}
+              </div>
+            {% endfor %}
+        
             {{ form.submit() }}
-        </form>
+        
+          </form>
     </div>
 </body>
 </html>
